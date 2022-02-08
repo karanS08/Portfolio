@@ -1,130 +1,288 @@
 body {
+  margin: 0;
+  width: auto;
+  height: auto;
 
-    background-color: #1d1f21;
-    /* padding-left: 350px; */
-    margin-left: 100px;
-    font-family: 'Oxygen Mono', monospace;
+  overflow-x: hidden;
+  /* background: #1d1f21; */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+
+  
+  
+  /* padding-left: 350px; */
+  margin-left: 100px;
+  opacity: 100%;
+  font-family: 'Oxygen Mono', monospace;
 
 }
 
+#canvas {
+  background-color: #1d1f21;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#mouse-control-control {
+  position: fixed;
+  bottom: 7%;
+  left: 120;
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 5px 10px;
+  border: solid 2px;
+  border-radius: 6px;
+  outline: none;
+  
+  transition: transform 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25), opacity 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25);
+
+  background-color: #2bbc8a7f; /* Green */
+ border: none;
+ color: #becacc;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ margin: 4px 2px;
+ cursor: pointer;
+ transition: ease-in-out 0.3s;
+ font-family: 'Oxygen Mono', monospace;
+ width: 80%;
+
+}
+#mouse-control-control:before {
+  content: attr(data-on);
+}
+
+
+#mouse-control-control:hover {
+  background-color: #1d1f217f;
+  color: white;
+  border: 2px solid #2bbc8a7f;
+  
+  
+}
+
+button {
+  font-size: 1em;
+  cursor: pointer;
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  button {
+    font-size: 2em;
+  }
+}
+
+
+
+
+
+/* .button {
+  position: fixed;
+  background-color: #2bbc8a7f; /* Green */
+ /* border: none;
+ color: #becacc;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ margin: 4px 2px;
+ cursor: pointer;
+ transition: ease-in-out 0.3s;
+ font-family: 'Oxygen Mono', monospace;
+ width: 80%;
+ bottom: 0;
+ } */
+ /* .button:hover {
+ background-color: #1d1f21;
+ color: white;
+ border: 2px solid #2bbc8a7f;
+ 
+ 
+ } */ 
+
+#github{
+  position: fixed;
+  bottom: 13%;
+  left: 11%;
+  padding: 10px;
+  background-color:#1d1f217f ;
+  border: none;
+  color: #becacc;
+  font-size: 1.5em;
+  font-family: 'Oxygen Mono', monospace;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  transition: ease-in-out 0.3s;
+  
+  
+}
+#github:hover{
+  scale: 1.5;
+}
+
+
+#linkedin{
+  position: fixed;
+  bottom: 13%;
+  left: 21%;
+  padding: 10px;
+  background-color:#1d1f217f;
+  border: none;
+  color: #becacc;
+  font-size: 1.5em;
+  font-family: 'Oxygen Mono', monospace;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  transition: ease-in-out 0.3s;
+
+  
+}
+#linkedin:hover{
+  scale: 1.5;
+}
+
+#mail{
+  position: fixed;
+  bottom: 13%;
+  left: 31%;
+  padding: 10px;
+  background-color:#1d1f217f;
+  border: none;
+  font-size: 1.5em;
+  font-family: 'Oxygen Mono', monospace;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  transition: ease-in-out 0.3s;
+  
+  
+}
+#mail:hover{
+  scale: 1.5;
+}
+#twitter{
+  position: fixed;
+  bottom: 13%;
+  left: 41%;
+  padding: 10px;
+  background-color:#1d1f217f;
+  border: none;
+  color: #becacc;
+  font-size: 1.5em;
+  font-family: 'Oxygen Mono', monospace;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  transition: ease-in-out 0.3s;
+  
+  
+}
+#twitter:hover{
+  scale: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 h1 {
-    color: #2bbc8a;
-    font-size: 30px;
+  color: #2bbc8a;
+  font-size: 30px;
 
 
 }
 
 h2 {
-    color: #666666;
-    font-size: 15px;
+  color: #666666;
+  font-size: 15px;
 }
 
 h3 {
-    color: #2bbc8a;
-    font-size: 20px;
+  color: #2bbc8a;
+  font-size: 20px;
 }
 
 h4 {
-    color:
-        #becacc;
-    font-size: 15px;
-    font-weight: 250;
+  color:
+      #becacc;
+  font-size: 15px;
+  font-weight: 250;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Create three equal columns that floats next to each other */
 .column {
-    float: left;
-    color: #becacc;
-    width: 33%;
-    transition: ease-in-out 0.3s;
+  float: left;
+  color: #becacc;
+  width: 33%;
+  transition: ease-in-out 0.3s;
 
-  
-    height: 300px;
-    /* Should be removed. Only for demonstration */
+
+  height: 300px;
+  /* Should be removed. Only for demonstration */
 }
-
-
-
-/* Clear floats after the columns */
-.row2:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.column2 {
-    float: left;
-    color: #becacc;
-    width: 4%;
-    padding: 10px;
-    height: 0px;
-
-    /* zoom_icons */
-    padding: 25px;
-    transition: transform .2s;
-    /* Animation */
-    width: 100px;
-    height: 120px;
-    margin-right: 2px;
-
-}
-
-.column2:hover {
-    transform: scale(1.5);
-    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-
-
-
-
 /* Clear floats after the columns */
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 
 }
 
 ul {
-    list-style-image: url('sqpurple.gif');
+  list-style-image: url('sqpurple.gif');
 }
 
 h5 {
-    font-weight: -250;
-    font-size: 20px;
+  font-weight: -250;
+  font-size: 20px;
 }
 
 .centered {
-    padding-bottom: -70px;
+  padding-bottom: -70px;
 }
 
 h6 {
-    font-size: 20px;
-    color: #2bbc8a;
+  font-size: 20px;
+  color: #2bbc8a;
 
 }
-.button {
-   background-color: #2bbc8a7f; /* Green */
-  border: none;
-  color: #becacc;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  transition: ease-in-out 0.3s;
-  font-family: 'Oxygen Mono', monospace;
-  width: 80%;
+.row{
+  padding-top: -20px;
+  width: 100%;
 }
-.button:hover {
-  background-color: #1d1f21;
-  color: white;
-  border: 2px solid #2bbc8a7f;
 
-  
-}
+
+
+
+
+
+
+
