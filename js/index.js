@@ -505,11 +505,11 @@ function setup() {
         window.open('https://twitter.com/Sharma_karan8', '_blank');
     });
     
-    let link4 = document.getElementById("email")
+    let link4 = document.getElementById("mail")
     link4.addEventListener("click", function() {
-        window.open('mailto:0802karanS@gmail.com', '_blank');
+        var link = "mailto:0802karanS@gmail.com"
+        window.location.href= link;
     });
-    
 
    
 
