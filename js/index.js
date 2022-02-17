@@ -201,14 +201,14 @@ class Star {
         * Easter Egg #2 ^.^
         * uncomment the snippet below to add little tracer lines that follow the mouse/touch
         */
-        if (Math.min(width, height)/2 > distance([mouseX, mouseY], [sx, sy]) && this.z < depth/2) {
-          context.beginPath();
-          context.moveTo(sx, sy);
-          let [mX, mY] = limitToCircle(mouseX, mouseY, sx, sy, 50);
-          context.lineTo(mX, mY);
-          context.lineWidth = radius;
-          context.strokeStyle = this.color.replace(')', `, ${mapRange(this.z, 0, depth, 0.1, 0.6)})`);
-          context.stroke();
+        if (Math.min(width, height) / 2 > distance([mouseX, mouseY], [sx, sy]) && this.z < depth / 2) {
+            context.beginPath();
+            context.moveTo(sx, sy);
+            let [mX, mY] = limitToCircle(mouseX, mouseY, sx, sy, 50);
+            context.lineTo(mX, mY);
+            context.lineWidth = radius;
+            context.strokeStyle = this.color.replace(')', `, ${mapRange(this.z, 0, depth, 0.1, 0.6)})`);
+            context.stroke();
         }
     }
 }
@@ -390,7 +390,7 @@ class StarField {
         context.ellipse(ellipseX, ellipseY, ellipseW, ellipseH, xSpin, 0, 2 * Math.PI);
         context.strokeStyle = `rgba(255, 255, 255, ${this.mouseControlAlpha})`;
         context.lineWidth = 2;
-        
+
         let scaleFactor = 1;
         if (-this.mouseY > 0) {
             scaleFactor = mapRange(Math.abs(this.mouseX / width), 0, 1, 2, 0);
@@ -398,10 +398,10 @@ class StarField {
         let lineDist = distance([ellipseX, ellipseY], [this.mouseX, this.mouseY * scaleFactor]);
         let [limitedMouseX, limitedMouseY] = limitToCircle(this.mouseX, this.mouseY, ellipseX, ellipseY, lineDist / 2);
         // input-tracking line
-        
-        
-        
-        
+
+
+
+
     }
     render() {
         if (this.showMouseControls) {
@@ -467,51 +467,82 @@ class StarField {
 }
 function setup() {
     let canvas = document.getElementById('canvas');
-    const howManyStars = 1000;
-    
-    if (IS_MOBILE)
-        howManyStars = 500;
+    var howManyStars= 1000;
+
+
+
     let starfield = new StarField(howManyStars, canvas);
     starfield.startRenderLoop();
-    window.alert("Please use a desktop browser for best experience");
-    let UIToggleButton = document.getElementById('mouse-control-control');
-    UIToggleButton.addEventListener('click', (e) => {
+
+    let CVbutton= document.getElementById('cv-button');
+    CVbutton.addEventListener('click', (e) => {
         starfield.showMouseControls = !starfield.showMouseControls;
-        window.open('https://github.com/karanS08/Portfolio/tree/main/cv', '_blank');
-        if (starfield.showMouseControls) {
-            starfield.mouseControlAlpha = 0.3;
-            UIToggleButton.classList.remove('off');
-        }
-        else {
-            UIToggleButton.classList.add('off');
-        }
-        e.preventDefault();
-    }, true);
+        window.open('https://github.com/karanS08/Portfolio/blob/main/cv/MyResume.pdf', '_blank');
+    });
 
 
     let link1 = document.getElementById("github")
-    link1.addEventListener("click", function() {
+    link1.addEventListener("click", function () {
         window.open('https://github.com/karanS08/', '_blank');
     });
-    
-    
+
+
     let link2 = document.getElementById("linkedin")
-    link2.addEventListener("click", function() {
+    link2.addEventListener("click", function () {
         window.open('https://www.linkedin.com/in/karan-sharma-17831b202/', '_blank');
     });
-    
+
     let link3 = document.getElementById("twitter")
-    link3.addEventListener("click", function() {
+    link3.addEventListener("click", function () {
         window.open('https://twitter.com/Sharma_karan8', '_blank');
     });
-    
+
     let link4 = document.getElementById("mail")
-    link4.addEventListener("click", function() {
+    link4.addEventListener("click", function () {
         var link = "mailto:0802karanS@gmail.com"
-        window.location.href= link;
+        window.location.href = link;
+    });
+    console.log("well congrats you are here but the jokes on you , the code is available on my github");
+    
+    // function to block ispect element
+    document.onkeydown = function (e) {
+       if (event.keyCode == 123) {
+            return false;
+         }
+         if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+    }
+     window.oncontextmenu = function () {
+        return false;
+    }
+
+   $(document).keydown(function (event) {
+         {
+             if (event.keyCode == 123) {
+                return false;
+            }
+           else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.shiftKey && event.keyCode == 74)) {
+                return false;
+             }
+
+       }
     });
 
-   
-
 }
+
 window.onload = setup();
+
+
+
+
+
+
+
+
