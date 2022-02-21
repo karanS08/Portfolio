@@ -47,7 +47,7 @@ body {
 button {
   cursor: pointer;
   border: none;
-  transition:  ease-in-out 0.2s;
+  transition:  cubic-bezier(0.55, 0.06, 0.68, 0.19) 0.2s;
   background-color: var(--backgroundf);
 }
 
@@ -172,19 +172,26 @@ h6 {
 
 #github:hover{
 transform: scale(1.5);
-
+background:#2bbc8a57;
+border-radius: 10%;
 }
+
 #twitter:hover{
 transform: scale(1.5);
-
+background:#2bbc8a57;
+border-radius: 10%;
 }
+
 #linkedin:hover{
 transform: scale(1.5);
-
+background:#2bbc8a57;
+border-radius: 10%;
 }
+
 #mail:hover{
 transform: scale(1.5);
-
+background:#2bbc8a57;
+border-radius: 10%;
 }
 
 @media screen and (max-width: 800px),(max-height: 850px)  {
@@ -241,29 +248,4 @@ transform: scale(1.5);
 .square{
 opacity: 1;
 }
-}
-/* align nav to right top of page */
-nav{
-  top: 100%;
-  left: 100;
-  margin-top: 20px;
-  padding-top: 10px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.6);
-  padding: 5px 10px;
-  border: solid 2px;
-  border-radius: 6px;
-  outline: none;
-
-  /* Green */
-  border: none;
-transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-opacity: 20%;
- 
-  width: 80%;
-
-}
-nav.hover{
-  transform: scale(1.2);
-  opacity: 1;
 }
