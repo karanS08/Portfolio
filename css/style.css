@@ -48,6 +48,7 @@ body {
 button {
   cursor: pointer;
   border: none;
+  background-color: var(--background);
 
 }
 
@@ -172,25 +173,25 @@ h6 {
 
 #github:hover{
 transform: scale(1.5);
-background:#2bbc8a57;
+
 border-radius: 10%;
 }
 
 #twitter:hover{
 transform: scale(1.5);
-background:#2bbc8a57;
+
 border-radius: 10%;
 }
 
 #linkedin:hover{
 transform: scale(1.5);
-background:#2bbc8a57;
+
 border-radius: 10%;
 }
 
 #mail:hover{
 transform: scale(1.5);
-background:#2bbc8a57;
+
 border-radius: 10%;
 }
 
